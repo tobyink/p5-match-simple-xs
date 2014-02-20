@@ -69,8 +69,7 @@ _match (SV *const a, SV *const b)
 		int count;
 		SV *ret;
 		bool can;
-		SV *method_name = newSV(0);
-		sv_setpv(method_name, "MATCH");
+		SV *method_name = newSVpvn("MATCH");
 		
 		ENTER;
 		SAVETMPS;
@@ -85,6 +84,8 @@ _match (SV *const a, SV *const b)
 		PUTBACK;
 		FREETMPS;
 		LEAVE;
+		
+		SvREFCNT_dec(method_name);
 		
 		if (can)
 		{
