@@ -85,8 +85,6 @@ _match (SV *const a, SV *const b)
 		FREETMPS;
 		LEAVE;
 		
-		SvREFCNT_dec(method_name);
-		
 		if (can)
 		{
 			bool ret_truth;
