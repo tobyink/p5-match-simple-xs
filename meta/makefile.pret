@@ -5,7 +5,7 @@
 `match-simple-XS`
 	:runtime-requirement    [ :on "perl 5.008"^^:CpanId ];
 	:runtime-recommendation [ :on "match::simple"^^:CpanId ];
-	:test-requirement       [ :on "Test::More 0.61"^^:CpanId ];
+	:test-requirement       [ :on "Test::More 0.96"^^:CpanId ];
 	:develop-recommendation [ :on "Dist::Inkt 0.001"^^:CpanId ];
 	.
 

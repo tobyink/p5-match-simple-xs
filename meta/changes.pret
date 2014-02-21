@@ -1,4 +1,5 @@
 # This file acts as the project's changelog.
 
-`match-simple-XS 0.001 cpan:TOBYINK`
-	label "not released yet".
+`match-simple-XS 0.000_01 cpan:TOBYINK`
+	issued 2014-02-21;
+	label  "Preview".
