@@ -129,6 +129,9 @@ _match (SV *const a, SV *const b)
 		int count;
 		SV *ret;
 		bool ret_truth;
+		
+		SAVESPTR(GvSV(PL_defgv));
+		
 		ENTER;
 		SAVETMPS;
 		PUSHMARK(SP);

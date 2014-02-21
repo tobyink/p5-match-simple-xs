@@ -44,6 +44,8 @@ sub doesnt_match {
 	);
 }
 
+match::simple::XS::match(1, sub { 1 }) for 0..99_999;
+
 does_match($_, sub { 1 }, "$_ matches sub that always returns 1") for 0..19;
 does_match($_, sub { "xyz" }, "$_ matches sub that always returns 'xyz'") for 0..19;
 does_match($_, sub { [] }, "$_ matches sub that always returns []") for 0..19;
