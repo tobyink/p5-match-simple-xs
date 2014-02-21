@@ -155,7 +155,7 @@ _match (SV *const a, SV *const b)
 		int i;
 		
 		b_arr = (AV*) SvRV(b);
-		top_index = av_tindex(b_arr);
+		top_index = av_len(b_arr);
 		
 		for (i = 0; i <= top_index; i++)
 		{
