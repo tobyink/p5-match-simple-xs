@@ -10,3 +10,10 @@
 	changeset [
 		item "av_tindex() doesn't work on Perl earlier than 5.18; use av_len() instead."^^Bugfix;
 	].
+
+`match-simple-XS 0.000_03 cpan:TOBYINK`
+	issued 2014-02-21;
+	label  "Preview";
+	changeset [
+		item "Emulate SvRXOK on versions of Perl too old to support it."^^Bugfix;
+	].
