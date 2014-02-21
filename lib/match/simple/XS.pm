@@ -7,6 +7,7 @@ use warnings;
 our $AUTHORITY = 'cpan:TOBYINK';
 our $VERSION   = '0.001';
 
+require Carp;
 require XSLoader;
 XSLoader::load('match::simple::XS', $VERSION);
 
@@ -18,15 +19,18 @@ if ($] >= 5.010)
 		no warnings;
 		use overload ();
 		sub _smartmatch {
-			return 0 unless overload::Method($_[1], "~~");
-			!!( $_[0] ~~ $_[1] )
+			overload::Method($_[1], "~~")
+				? !!( $_[0] ~~ $_[1] )
+				: Carp::croak("match::simple::XS cannot match")
 		}
 	];
 }
 else
 {
 	eval q[
-		sub _smartmatch { 0 }
+		sub _smartmatch {
+			Carp::croak("match::simple::XS cannot match")
+		}
 	];
 }
 
