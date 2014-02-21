@@ -3,3 +3,10 @@
 `match-simple-XS 0.000_01 cpan:TOBYINK`
 	issued 2014-02-21;
 	label  "Preview".
+
+`match-simple-XS 0.000_02 cpan:TOBYINK`
+	issued 2014-02-21;
+	label  "Preview";
+	changeset [
+		item "av_tindex() doesn't work on Perl earlier than 5.18; use av_len() instead."^^Bugfix;
+	].
