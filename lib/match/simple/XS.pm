@@ -5,7 +5,7 @@ use strict;
 use warnings;
 
 our $AUTHORITY = 'cpan:TOBYINK';
-our $VERSION   = '0.001';
+our $VERSION   = '0.000_01';
 
 require Carp;
 require XSLoader;
@@ -56,6 +56,13 @@ L<match::simple>.
 =head1 AUTHOR
 
 Toby Inkster E<lt>tobyink@cpan.orgE<gt>.
+
+=head1 THANKS
+
+Thanks to alh, bulk88, rafl, leont, and ilmari on the I<< #xs >> IRC
+channel for helping me translate a bunch ideas from Perl to XS.
+
+The XS source code for L<Scalar::Util> was also very useful.
 
 =head1 COPYRIGHT AND LICENCE
 

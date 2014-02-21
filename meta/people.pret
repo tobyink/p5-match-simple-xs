@@ -7,3 +7,20 @@ cpan:TOBYINK
 	:page  <https://metacpan.org/author/TOBYINK>;
 	:mbox  <mailto:tobyink@cpan.org>.
 
+`match-simple-XS`
+	doap:helper cpan:WOLFSAGE, cpan:BULKDD, cpan:FLORA, cpan:LEONT, cpan:ILMARI.
+
+cpan:WOLFSAGE
+	:name  "Matthew Horsfall (alh)".
+
+cpan:BULKDD
+	:name  "Daniel Dragan".
+
+cpan:FLORA
+	:name  "Florian Ragwitz".
+
+cpan:LEONT
+	:name  "Leon Timmermans".
+
+cpan:ILMARI
+	:name  "Dagfinn Ilmari Mannsåker".
