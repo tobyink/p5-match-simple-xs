@@ -8,6 +8,32 @@
 
 #define sv_defined(sv) (sv && (SvIOK(sv) || SvNOK(sv) || SvPOK(sv) || SvROK(sv)))
 
+#ifndef SvRXOK
+
+#define SvRXOK(sv) is_regexp(aTHX_ sv)
+
+STATIC int
+is_regexp (pTHX_ SV* sv) {
+	SV* tmpsv;
+	
+	if (SvMAGICAL(sv))
+	{
+		mg_get(sv);
+	}
+	
+	if (SvROK(sv)
+	&& (tmpsv = (SV*) SvRV(sv))
+	&& SvTYPE(tmpsv) == SVt_PVMG 
+	&& (mg_find(tmpsv, PERL_MAGIC_qr)))
+	{
+		return TRUE;
+	}
+	
+	return FALSE;
+}
+
+#endif
+
 bool
 _match (SV *const a, SV *const b)
 {
@@ -161,10 +187,10 @@ _match (SV *const a, SV *const b)
 		{
 			SV *item = *av_fetch(b_arr, i, 1);
 			if (_match(a, item))
-				return ((bool)1);
+				return TRUE;
 		}
 		
-		return ((bool)0);
+		return FALSE;
 	}
 	
 	croak("match::simple::XS cannot match");
