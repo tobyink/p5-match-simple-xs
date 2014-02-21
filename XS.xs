@@ -161,10 +161,10 @@ _match (SV *const a, SV *const b)
 		{
 			SV *item = *av_fetch(b_arr, i, 1);
 			if (_match(a, item))
-				return true;
+				return ((bool)1);
 		}
 		
-		return false;
+		return ((bool)0);
 	}
 	
 	croak("match::simple::XS cannot match");
