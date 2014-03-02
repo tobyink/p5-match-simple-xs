@@ -17,3 +17,11 @@
 	changeset [
 		item "Emulate SvRXOK on versions of Perl too old to support it."^^Bugfix;
 	].
+
+`match-simple-XS 0.000_04 cpan:TOBYINK`
+	issued 2014-03-02;
+	label  "Preview";
+	changeset [
+		item "Fix testing $b->can("MATCH") from XS."^^Bugfix;
+		item "Greatly improved test suite."^^Tests;
+	].
