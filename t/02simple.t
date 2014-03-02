@@ -36,7 +36,7 @@ my $obj = do {
 sub does_match {
 	my ($a, $b, $name) = @_;
 	my ($as, $bs) = map do {
-		no overloading;
+		no if ($] >= 5.010001), 'overloading';
 		ref($_) ? qq[$_] : defined($_) ? qq["$_"] : q[undef];
 	}, @_;
 	$name ||= "$as matches $bs";
@@ -49,7 +49,7 @@ sub does_match {
 sub doesnt_match {
 	my ($a, $b, $name) = @_;
 	my ($as, $bs) = map do {
-		no overloading;
+		no if ($] >= 5.010001), 'overloading';
 		ref($_) ? qq[$_] : defined($_) ? qq["$_"] : q[undef];
 	}, @_;
 	$name ||= "$as NOT matches $bs";
@@ -102,7 +102,7 @@ doesnt_match(0, $obj2);
 
 # If the right hand side is an object which overloads "~~", then a
 # true smart match is performed.
-if ($] >= 5.010001 and $] < 5.020000)
+if ($] >= 5.010001 and $] < 5.019000)
 {
 	my $obj3 = eval q{
 		no warnings;
