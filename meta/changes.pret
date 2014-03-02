@@ -22,6 +22,6 @@
 	issued 2014-03-02;
 	label  "Preview";
 	changeset [
-		item "Fix testing $b->can("MATCH") from XS."^^Bugfix;
+		item "Fix testing $b->can('MATCH') from XS."^^Bugfix;
 		item "Greatly improved test suite."^^Tests;
 	].
