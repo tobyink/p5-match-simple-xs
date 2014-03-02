@@ -95,7 +95,7 @@ _match (SV *const a, SV *const b)
 		int count;
 		SV *ret;
 		bool can;
-		SV *method_name = newSVpvn("MATCH", 0);
+		SV *method_name = newSVpv("MATCH", 0);
 		
 		ENTER;
 		SAVETMPS;
