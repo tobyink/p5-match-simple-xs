@@ -25,3 +25,10 @@
 		item "Fix testing $b->can('MATCH') from XS."^^Bugfix;
 		item "Greatly improved test suite."^^Tests;
 	].
+
+`match-simple-XS 0.000_05 cpan:TOBYINK`
+	issued 2014-03-02;
+	label  "Preview";
+	changeset [
+		item "Don't do `no overloading` on Perl < 5.10.1 in test cases."^^Tests;
+	].
