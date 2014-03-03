@@ -32,3 +32,7 @@
 	changeset [
 		item "Don't do `no overloading` on Perl < 5.10.1 in test cases."^^Tests;
 	].
+
+`match-simple-XS 0.001 cpan:TOBYINK`
+	issued 2014-03-03;
+	label  "Initial stable release".

@@ -5,7 +5,7 @@ use strict;
 use warnings;
 
 our $AUTHORITY = 'cpan:TOBYINK';
-our $VERSION   = '0.000_05';
+our $VERSION   = '0.001';
 
 require Carp;
 require XSLoader;
