@@ -13,26 +13,25 @@ XSLoader::load('match::simple::XS', $VERSION);
 
 sub _regexp { scalar($_[0] =~ $_[1]) }
 
-if ($] >= 5.010)
-{
-	eval q[
-		no warnings;
-		use overload ();
-		sub _smartmatch {
-			overload::Method($_[1], "~~")
-				? !!( $_[0] ~~ $_[1] )
-				: Carp::croak("match::simple::XS cannot match")
-		}
-	];
+sub _overloaded_smartmatch {
+	my ( $obj ) = @_;
+
+	if ( $] lt '5.010' ) { require MRO::Compat; }
+	else                 { require mro;         }
+	
+	my @mro = @{ mro::get_linear_isa( ref $obj ) };
+	for my $class ( @mro ) {
+		my $name = "$class\::(~~";
+		my $overload = do {
+			no strict 'refs';
+			exists( &$name ) ? \&$name : undef;
+		};
+		return $overload if $overload;
+	}
+	
+	return;
 }
-else
-{
-	eval q[
-		sub _smartmatch {
-			Carp::croak("match::simple::XS cannot match")
-		}
-	];
-}
+
 
 1;
 __END__

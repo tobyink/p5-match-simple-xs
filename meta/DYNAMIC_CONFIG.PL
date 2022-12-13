@@ -1,3 +1,7 @@
+	if ( $] lt '5.010' ) {
+		$meta->{prereqs}{runtime}{requires}{'MRO::Compat'} = '0';
+	}
+	
 	# Probably a lot of the following is cargo cult.
 	# My XS-fu is not strong.
 	#
