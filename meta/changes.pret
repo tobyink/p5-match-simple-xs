@@ -36,3 +36,9 @@
 `match-simple-XS 0.001 cpan:TOBYINK`
 	issued 2014-03-03;
 	label  "Initial stable release".
+
+`match-simple-XS 0.002 cpan:TOBYINK`
+	issued 2022-12-13;
+	changeset [
+		item "Don't internally use ~~ ever, even on overloaded objects."^^Change;
+	].
