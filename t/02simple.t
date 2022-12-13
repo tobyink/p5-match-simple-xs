@@ -105,8 +105,10 @@ doesnt_match(0, $obj2);
 {
 	my $obj3 = eval q{
 		no warnings;
+		no strict 'refs';
 		package Local::YetAnotherClass;
-		use overload q[~~] => sub { $_[1] }, fallback => 1;
+		use overload q[bool] => sub { 1 }, fallback => 1;
+		*{__PACKAGE__.'::(~~'} = sub { $_[1] };
 		bless [];
 	};
 	my $e = $@;
