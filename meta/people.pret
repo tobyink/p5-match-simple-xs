@@ -8,7 +8,7 @@ cpan:TOBYINK
 	:mbox  <mailto:tobyink@cpan.org>.
 
 `match-simple-XS`
-	doap:helper cpan:WOLFSAGE, cpan:BULKDD, cpan:FLORA, cpan:LEONT, cpan:ILMARI.
+	doap:helper cpan:WOLFSAGE, cpan:BULKDD, cpan:FLORA, cpan:LEONT, cpan:ILMARI, cpan:BRICKER.
 
 cpan:WOLFSAGE
 	:name  "Matthew Horsfall (alh)".
@@ -24,3 +24,6 @@ cpan:LEONT
 
 cpan:ILMARI
 	:name  "Dagfinn Ilmari Mannsåker".
+
+cpan:BRICKER
+	:name  "Bill Ricker".
