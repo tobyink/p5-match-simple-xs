@@ -9,9 +9,9 @@ our $VERSION   = '0.001';
 
 require Carp;
 require XSLoader;
-XSLoader::load('match::simple::XS', $VERSION);
+XSLoader::load( 'match::simple::XS', $VERSION );
 
-sub _regexp { scalar($_[0] =~ $_[1]) }
+sub _regexp { scalar( $_[0] =~ $_[1] ) }
 
 sub _overloaded_smartmatch {
 	my ( $obj ) = @_;
@@ -32,7 +32,6 @@ sub _overloaded_smartmatch {
 	return;
 }
 
-
 1;
 __END__
 
@@ -45,6 +44,8 @@ match::simple::XS - XS backend for match::simple
   use match::simple;
 
 =head1 DESCRIPTION
+
+The user-facing module is L<match::simple>.
 
 Nothing to see here; move along.
 
@@ -65,7 +66,7 @@ The XS source code for L<Scalar::Util> was also very useful.
 
 =head1 COPYRIGHT AND LICENCE
 
-This software is copyright (c) 2014 by Toby Inkster.
+This software is copyright (c) 2014, 2022 by Toby Inkster.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
