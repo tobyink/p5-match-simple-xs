@@ -102,7 +102,7 @@ doesnt_match(0, $obj2);
 
 # If the right hand side is an object which overloads "~~", then a
 # true smart match is performed.
-{
+if ( $] le '5.036000' ) {
 	my $obj3 = eval q{
 		no warnings;
 		no strict 'refs';
