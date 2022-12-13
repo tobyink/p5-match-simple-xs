@@ -102,7 +102,7 @@ doesnt_match(0, $obj2);
 
 # If the right hand side is an object which overloads "~~", then a
 # true smart match is performed.
-if ($] >= 5.010001 and $] <= 5.036000)
+if ( $] ge '5.010001' and $] le '5.036000' )
 {
 	my $obj3 = eval q{
 		no warnings;
