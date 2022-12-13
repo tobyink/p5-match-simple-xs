@@ -7,6 +7,7 @@ use warnings;
 our $AUTHORITY = 'cpan:TOBYINK';
 our $VERSION   = '0.002';
 
+require mro;
 require Carp;
 require XSLoader;
 XSLoader::load( 'match::simple::XS', $VERSION );
