@@ -1,6 +1,6 @@
 package match::simple::XS;
 
-use 5.008000;
+use 5.012;
 use strict;
 use warnings;
 
@@ -16,9 +16,6 @@ sub _regexp { scalar( $_[0] =~ $_[1] ) }
 sub _overloaded_smartmatch {
 	my ( $obj ) = @_;
 
-	if ( $] lt '5.010' ) { require MRO::Compat; }
-	else                 { require mro;         }
-	
 	my @mro = @{ mro::get_linear_isa( ref $obj ) };
 	for my $class ( @mro ) {
 		my $name = "$class\::(~~";

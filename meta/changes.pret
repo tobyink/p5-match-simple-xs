@@ -41,4 +41,5 @@
 	issued 2022-12-13;
 	changeset [
 		item "Don't internally use ~~ ever, even on overloaded objects."^^Change;
+		item "No longer support Perl older than 5.12."^^Update;
 	].
