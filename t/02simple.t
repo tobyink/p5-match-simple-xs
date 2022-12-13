@@ -102,7 +102,6 @@ doesnt_match(0, $obj2);
 
 # If the right hand side is an object which overloads "~~", then a
 # true smart match is performed.
-if ( $] ge '5.010001' and $] le '5.036000' )
 {
 	my $obj3 = eval q{
 		no warnings;
@@ -110,7 +109,8 @@ if ( $] ge '5.010001' and $] le '5.036000' )
 		use overload q[~~] => sub { $_[1] }, fallback => 1;
 		bless [];
 	};
-	ok($obj3, 'eval worked');
+	my $e = $@;
+	ok($obj3, 'eval worked') or diag($e);
 	does_match(1, $obj3);
 	doesnt_match(0, $obj3);
 }
